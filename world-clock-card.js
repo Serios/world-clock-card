@@ -1,11 +1,17 @@
+import {
+  LitElement,
+  html,
+  css,
+} from "https://unpkg.com/lit-element@2.0.1/lit-element.js?module";
+
 export const hass = document.querySelector("home-assistant").hass;
 
-class WorldClockCard extends Polymer.Element {
+class WorldClockCard extends LitElement {
   
-  static get template() {
-    return Polymer.html`
+  render() {
+    return html`
         <style>
-			:host { cursor: default; }
+			:host { cursor: default; --mdc-icon-size: 5em; }
 			.content { padding: 24px 16px; display:flex; flex-wrap: wrap; align-items: center; }
 			.main-clock {
 				padding: 0; margin: 0; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-wrap: wrap; flex-wrap: wrap;
@@ -14,7 +20,6 @@ class WorldClockCard extends Polymer.Element {
 				color: var(--primary-text-color);
 			}
 			.clockicon { align-self: baseline; margin-right: 1.2em; }
-			.clockicon .ha-icon ha-icon { width: 5em; height: 5em; }
 			.time {
 				font-family: var(--paper-font-headline_-_font-family);
 				-webkit-font-smoothing: var(--paper-font-headline_-_-webkit-font-smoothing);
@@ -86,13 +91,12 @@ class WorldClockCard extends Polymer.Element {
     }
   }
   
-  ready() {
-    super.ready();
-    this.main_time = this.$.time;
-    this.main_date = this.$.date;	
-    this.zone1_time = this.$.time_zone1;
-    this.zone2_time = this.$.time_zone2;
-    this.zone3_time = this.$.time_zone3;
+  firstUpdated() {
+    this.main_time = this.shadowRoot.getElementById('time');
+    this.main_date = this.shadowRoot.getElementById('date');	
+    this.zone1_time = this.shadowRoot.getElementById('time_zone1');
+    this.zone2_time = this.shadowRoot.getElementById('time_zone2');
+    this.zone3_time = this.shadowRoot.getElementById('time_zone3');
     this._updateTime();
     setInterval(() => this._updateTime(), 500);
   }
