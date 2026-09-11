@@ -1,4 +1,5 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/Serios/world-clock-card)](https://github.com/Serios/world-clock-card/releases)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 # World Clock Card
 
