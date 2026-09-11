@@ -1,0 +1,17 @@
+{
+  "name": "world-clock-card",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A Home Assistant Lovelace card showing local time/date plus three configurable timezone clocks.",
+  "scripts": {
+    "build": "esbuild src/world-clock-card.js --bundle --format=esm --target=es2020 --minify --outfile=dist/world-clock-card.js",
+    "build:dev": "esbuild src/world-clock-card.js --bundle --format=esm --target=es2020 --outfile=dist/world-clock-card.js --sourcemap"
+  },
+  "dependencies": {
+    "lit": "^2.8.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}
