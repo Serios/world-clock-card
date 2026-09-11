@@ -1,3 +1,5 @@
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Serios/world-clock-card)](https://github.com/Serios/world-clock-card/releases)
+
 # World Clock Card
 
 A Home Assistant Lovelace card that shows the current local time and date,
